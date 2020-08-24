@@ -43,10 +43,12 @@ logging.getLogger("urllib3.connectionpool").setLevel(logging.WARNING)
 
 versions = {
     "KJVA": "de4e12af7f28f599-01",
+    "FBV": "65eec8e0b60e656b-01",
 }
 
 version_names = {
     "KJVA": "King James Version with Apocrypha (KJVA)",
+    "FBV": "Free Bible Version",
 }
 
 # def remove_bible_title_in_search(string):
