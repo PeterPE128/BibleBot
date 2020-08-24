@@ -41,8 +41,8 @@ books = client.get_books()
 class VerseHandler:
     @classmethod
     async def process_raw_message(cls, raw_message, sender, lang, guild):
-        available_versions = versions.get_versions_by_acronym()
-        brackets = formatting.get_guild_brackets(guild)
+        available_versions = await versions.get_versions_by_acronym()
+        brackets = await formatting.get_guild_brackets(guild)
         msg = raw_message.content
         msg = " ".join(msg.splitlines())
 
@@ -94,10 +94,10 @@ class VerseHandler:
             return_list = []
 
             for reference in references:
-                version = versions.get_version(sender)
-                mode = formatting.get_mode(sender)
-                headings = formatting.get_headings(sender)
-                verse_numbers = formatting.get_verse_numbers(sender)
+                version = await versions.get_version(sender)
+                mode = await formatting.get_mode(sender)
+                headings = await formatting.get_headings(sender)
+                verse_numbers = await formatting.get_verse_numbers(sender)
 
                 ref_split = reference.split(" | v: ")
 
