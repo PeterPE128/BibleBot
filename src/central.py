@@ -21,13 +21,14 @@ import math
 import os
 import time
 
+import json
+import sys
 import tinydb
 
 from data import languages
 from extensions.vylogger import VyLogger
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-
 config = configparser.ConfigParser()
 config.read(f"{dir_path}/config.ini")
 
@@ -51,6 +52,11 @@ brackets = {
     "first": config["BibleBot"]["dividingBrackets"][0],
     "second": config["BibleBot"]["dividingBrackets"][1]
 }
+
+
+
+def load_verse_count_array():
+    return nAn
 
 
 def capitalize_first_letter(string):
